@@ -28,7 +28,7 @@ else:
 # Define the hyperparameters
 batch_size = 32
 learning_rate = 0.0008
-num_epochs = 15
+num_epochs = 6
 
 # Define the transforms
 transform = transforms.Compose([
