@@ -26,7 +26,7 @@ for class_name in os.listdir(src_path):
         npy_path = os.path.join(class_dir, filename)
         image_array = np.load(npy_path)
 
-        # Transpose the tensor to (height, width, channels)
+        # Transpose the tensor to (height, width, channels  )
         image_array = np.transpose(image_array, (1, 2, 0))
 
         # Apply the transform to the image array
