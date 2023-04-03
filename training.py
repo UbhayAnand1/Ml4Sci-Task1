@@ -27,12 +27,15 @@ else:
 
 # Define the hyperparameters
 batch_size = 32
-learning_rate = 0.001
-num_epochs = 10
+learning_rate = 0.0008
+num_epochs = 15
 
 # Define the transforms
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
+    transforms.RandomRotation(degrees=45),
+    # transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.2),
+    transforms.RandomHorizontalFlip(p=0.5),
     transforms.ToTensor(),
 ])
 
