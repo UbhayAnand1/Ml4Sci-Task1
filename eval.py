@@ -6,6 +6,7 @@ from torchvision import transforms
 from torch.utils.data import DataLoader
 from torchvision.datasets import ImageFolder
 import torchvision.models as models
+# from training.py import model
 
 # Define the ResNet model
 class ResNet(nn.Module):
@@ -29,10 +30,11 @@ model.eval()
 
 # Define the data transformations
 data_transforms = transforms.Compose([
-    transforms.Resize(256),
-    transforms.CenterCrop(224),
     transforms.ToTensor(),
-    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+    transforms.Normalize([0.5], [0.5]),
+    transforms.RandomHorizontalFlip(p=0.5),
+    # transforms.RandomRotation(degrees=30),
+    transforms.RandomResizedCrop(size=(256, 256), scale=(0.8, 1.0), ratio=(1.0, 1.0))
 ])
 
 # Load the test data

@@ -14,7 +14,7 @@ transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize([0.5], [0.5]),
     transforms.RandomHorizontalFlip(p=0.5),
-    transforms.RandomRotation(degrees=30),
+    # transforms.RandomRotation(degrees=30),
     transforms.RandomResizedCrop(size=(256, 256), scale=(0.8, 1.0), ratio=(1.0, 1.0))
 ])
 
